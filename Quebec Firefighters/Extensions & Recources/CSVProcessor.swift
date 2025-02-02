@@ -18,7 +18,7 @@ enum CSVError: Error, LocalizedError {
         case .emptyFile:
             return LocalizationKeys.csvEmpty.localized
         case .invalidRow(let row, let expected, let found):
-            return LocalizationKeys.csvRowError.localized(with: row, found, expected)
+            return "Row \(row) has \(found) columns; expected \(expected)."
         }
     }
 }

@@ -16,11 +16,11 @@
 "value" = "Value";
 
 "csv_empty" = "The CSV file is empty.";
-"csv_row_error" = "Row %d has %d columns; expected %d.";
+"csv_row_error" = "Row %@ has %@ columns; expected %@.";
 "permission_denied" = "Permission denied for file access.";
 
-"fire_report" = "%@ Fire Report";
-"total_fires" = "🔥 Total Fires: %d";
+"fire_report" = " Fire Report";
+"total_fires" = "🔥 Total Fires: ";
 "addressed_fire" = "✅ Addressed";
 "missed_fire" = "🚨 Missed";
 "close" = "Close";
@@ -30,11 +30,11 @@
 "fire_response_report" = "Fire Response Report";
 "general_statistics" = "General Statistics";
 
-"total_fires_addressed" = "Total Fires Addressed: %d";
-"total_fires_delayed" = "Total Fires Delayed: %d";
-"total_fires_no_emojie" = "Total Fires: %d";
-"operational_costs" = "Operational Costs: $%.2f";
-"damage_costs" = "Damage Costs: $%.2f";
+"total_fires_addressed" = "Total Fires Addressed:";
+"total_fires_delayed" = "Total Fires Delayed:";
+"total_fires_no_emojie" = "Total Fires:";
+"operational_costs" = "Operational Costs: $";
+"damage_costs" = "Damage Costs: $";
 
 "upload_csv_file" = "Upload CSV File";
 "upload_csv_description" = "Upload your csv file to plan deployment of units to prevent wildfires!";

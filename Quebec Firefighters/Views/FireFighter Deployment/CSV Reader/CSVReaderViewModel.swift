@@ -55,14 +55,36 @@ class CSVReaderViewModel: ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData
         
+        // Log the request payload (optional)
+        if let jsonString = String(data: jsonData, encoding: .utf8) {
+            print("🚀 Sending JSON Request: \(jsonString)")
+        }
+        
         let (data, response) = try await URLSession.shared.data(for: request)
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
         }
         
+        // Log response status code
+        print("📩 Received HTTP Response: \(httpResponse.statusCode)")
+        
+        // Check for successful response
+        guard httpResponse.statusCode == 200 else {
+            print("❌ Server returned an error: \(httpResponse.statusCode)")
+            throw URLError(.badServerResponse)
+        }
+        
+        // Log raw JSON response
+        if let responseString = String(data: data, encoding: .utf8) {
+            print("📜 JSON Response: \(responseString)")
+        }
+        
+        // Decode JSON response
         let decodedResponse = try JSONDecoder().decode(FireReportResponse.self, from: data)
         fireReport = decodedResponse.report
     }
+
     
     /// Opens the app settings if the user does not have permission to access the file.
     func openSettings() {

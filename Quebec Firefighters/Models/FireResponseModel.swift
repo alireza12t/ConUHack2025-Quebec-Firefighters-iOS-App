@@ -41,12 +41,12 @@ struct FireReportModel: Codable {
     var estimatedDamageCosts: Double
 
     enum CodingKeys: String, CodingKey {
-        case firesAddressed = "fires_addressed"
-        case firesDelayed = "fires_delayed"
         case operationalCosts = "operational_costs"
         case estimatedDamageCosts = "estimated_damage_costs"
+        case firesAddressed = "fires_addressed"
+        case firesDelayed = "fires_delayed"
     }
-
+    
     /// Total fires addressed (summing all severity levels).
     var totalFiresAddressed: Int {
         firesAddressed.values.reduce(0, +)

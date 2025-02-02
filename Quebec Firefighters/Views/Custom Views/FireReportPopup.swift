@@ -45,7 +45,7 @@ struct FireReportPopup: View {
                 }
 
             VStack(spacing: 20) {
-                Text(LocalizationKeys.fireReport.localized(with: severity.capitalized))
+                Text(" \(severity.capitalized)" + LocalizationKeys.fireReport.localized)
                     .font(.title2)
                     .bold()
 
@@ -75,7 +75,7 @@ struct FireReportPopup: View {
                     .cornerRadius(12)
                 }
 
-                Text(LocalizationKeys.totalFires.localized(with: total))
+                Text(LocalizationKeys.totalFires.localized + " \(total)")
                     .font(.headline)
                     .foregroundColor(.orange)
 
