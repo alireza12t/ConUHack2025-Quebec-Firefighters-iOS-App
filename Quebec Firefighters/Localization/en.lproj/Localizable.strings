@@ -33,8 +33,8 @@
 "total_fires_addressed" = "Total Fires Addressed:";
 "total_fires_delayed" = "Total Fires Delayed:";
 "total_fires_no_emojie" = "Total Fires:";
-"operational_costs" = "Operational Costs: $";
-"damage_costs" = "Damage Costs: $";
+"operational_costs" = "Operational Costs: ";
+"damage_costs" = "Damage Costs: ";
 
 "upload_csv_file" = "Upload CSV File";
 "upload_csv_description" = "Upload your csv file to plan deployment of units to prevent wildfires!";
