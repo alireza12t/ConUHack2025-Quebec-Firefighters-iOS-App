@@ -46,6 +46,7 @@ struct PredictionListView: View {
                     Text("High").tag("high")
                 }
                 .pickerStyle(MenuPickerStyle())
+                .frame(width: 40)
                 
                 // Sort order
                 Picker("Sort by Probability", selection: $sortOrder) {
