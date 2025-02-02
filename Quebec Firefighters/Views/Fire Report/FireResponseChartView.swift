@@ -13,7 +13,7 @@ import Charts
 /// with the total number for that severity. A legend is automatically provided.
 struct FireResponseChartView: View {
     /// The fire response report model.
-    let report: FireResponseModel
+    let report: FireReportModel
     
     /// Binding to control display of the detailed popup.
     @Binding var showPopup: Bool

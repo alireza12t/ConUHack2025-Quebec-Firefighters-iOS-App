@@ -9,10 +9,10 @@ import Foundation
 
 /// ViewModel for managing fire response report data.
 class FireReportViewModel: ObservableObject {
-    @Published var fireReport: FireResponseModel?
+    @Published var fireReport: FireReportModel?
     @Published var selectedSeverity: String?
     
-    init(fireReport: FireResponseModel? = nil, selectedSeverity: String? = nil) {
+    init(fireReport: FireReportModel? = nil, selectedSeverity: String? = nil) {
         self.fireReport = fireReport
         self.selectedSeverity = selectedSeverity
     }

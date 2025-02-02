@@ -10,7 +10,7 @@ import SwiftUI
 /// Displays general fire response statistics in a form.
 struct FireReportStatisticsView: View {
     /// The fire response report model.
-    let report: FireResponseModel
+    let report: FireReportModel
     
     var body: some View {
         Form {

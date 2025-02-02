@@ -62,7 +62,7 @@ struct FireReportView: View {
 }
 
 #Preview {
-    FireReportView(viewModel: FireReportViewModel(fireReport: FireResponseModel(
+    FireReportView(viewModel: FireReportViewModel(fireReport: FireReportModel(
         firesAddressed: ["low": 4, "medium": 12, "high": 12],
         firesDelayed: ["low": 1, "medium": 2, "high": 1],
         operationalCosts: 50000,
