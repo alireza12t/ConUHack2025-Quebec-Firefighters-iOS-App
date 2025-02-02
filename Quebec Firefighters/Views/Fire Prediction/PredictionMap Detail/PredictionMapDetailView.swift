@@ -54,7 +54,9 @@ struct PredictionMapDetailView: View {
                 .padding(.bottom, 20)
         }
         .navigationTitle("Incident Location")
-        .navigationBarTitleDisplayMode(.inline)
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline) // Only for iOS
+        #endif
     }
 }
 
@@ -63,6 +65,17 @@ struct PredictionMapDetailView: View {
 struct BottomSheetView: View {
     var prediction: FirePrediction
     var address: String
+    var backgroundColor: Color
+
+    init(prediction: FirePrediction, address: String) {
+        self.prediction = prediction
+        self.address = address
+        #if os(iOS)
+        self.backgroundColor = UIColor.systemGroupedBackground.swiftUIColor
+        #else
+        self.backgroundColor = NSColor.controlBackgroundColor.swiftUIColor
+        #endif
+    }
     
     var body: some View {
         VStack(spacing: 16) {
@@ -90,7 +103,7 @@ struct BottomSheetView: View {
         .frame(maxWidth: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color(UIColor.systemBackground))
+                .fill(backgroundColor)
                 .shadow(radius: 5)
         )
     }

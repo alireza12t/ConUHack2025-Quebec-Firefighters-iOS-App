@@ -11,6 +11,16 @@ import SwiftUI
 /// Each row navigates to a detailed map view showing the incident location.
 struct PredictionListView: View {
     var predictions: [FirePrediction]
+    var backgroundColor: Color
+    
+    init(predictions: [FirePrediction]) {
+        self.predictions = predictions
+        #if os(iOS)
+        self.backgroundColor = UIColor.secondarySystemBackground.swiftUIColor
+        #else
+        self.backgroundColor = NSColor.windowBackgroundColor.swiftUIColor
+        #endif
+    }
     
     var body: some View {
         List {
@@ -42,7 +52,7 @@ struct PredictionListView: View {
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 12)
-                            .fill(Color(UIColor.secondarySystemBackground))
+                            .fill(backgroundColor)
                     )
                     .padding(.vertical, 4)
                 }

@@ -7,9 +7,18 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
+import UIKit
 extension UIColor {
-    
     var swiftUIColor: Color {
-        Color(uiColor: self)
+        Color(self)
     }
 }
+#elseif canImport(AppKit)
+import AppKit
+extension NSColor {
+    var swiftUIColor: Color {
+        Color(self)
+    }
+}
+#endif

@@ -66,9 +66,16 @@ class CSVReaderViewModel: ObservableObject {
     
     /// Opens the app settings if the user does not have permission to access the file.
     func openSettings() {
-        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-        if UIApplication.shared.canOpenURL(settingsURL) {
-            UIApplication.shared.open(settingsURL)
+        #if os(iOS)
+        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(settingsURL) {
+                UIApplication.shared.open(settingsURL)
+            }
         }
+        #elseif os(macOS)
+        if let url = URL(string: "x-apple.systempreferences:") {
+            NSWorkspace.shared.open(url)
+        }
+        #endif
     }
 }

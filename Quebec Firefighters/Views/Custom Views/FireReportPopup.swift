@@ -20,6 +20,20 @@ struct FireReportPopup: View {
     let delayed: Int
     let total: Int
     @Binding var showPopup: Bool
+    var backgroundColor: Color
+    
+    init(severity: String, addressed: Int, delayed: Int, total: Int, showPopup: Binding<Bool>) {
+        self.severity = severity
+        self.addressed = addressed
+        self.delayed = delayed
+        self.total = total
+        self._showPopup = showPopup
+        #if os(iOS)
+        self.backgroundColor = UIColor.systemGroupedBackground.swiftUIColor
+        #else
+        self.backgroundColor = NSColor.controlBackgroundColor.swiftUIColor
+        #endif
+    }
 
     var body: some View {
         ZStack {
@@ -78,7 +92,9 @@ struct FireReportPopup: View {
                 }
             }
             .padding()
-            .background(UIColor.systemBackground.swiftUIColor)
+            .background(
+                Color(backgroundColor)
+            )
             .cornerRadius(20)
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
