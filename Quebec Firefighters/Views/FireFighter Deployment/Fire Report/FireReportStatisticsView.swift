@@ -14,12 +14,12 @@ struct FireReportStatisticsView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("General Statistics")) {
-                Text("Total Fires Addressed: \(report.totalFiresAddressed)")
-                Text("Total Fires Delayed: \(report.totalFiresDelayed)")
-                Text("Total Fires: \(report.totalFires)")
-                Text("Operational Costs: $\(report.operationalCosts, specifier: "%.2f")")
-                Text("Damage Costs: $\(report.estimatedDamageCosts, specifier: "%.2f")")
+            Section(header: Text(LocalizationKeys.generalStatistics.localized)) {
+                Text(LocalizationKeys.totalFiresAddressed.localized(with: report.totalFiresAddressed))
+                Text(LocalizationKeys.totalFiresDelayed.localized(with: report.totalFiresDelayed))
+                Text(LocalizationKeys.totalFires.localized(with: report.totalFires))
+                Text(LocalizationKeys.operationalCosts.localized(with: String(format: "$%.2f", report.operationalCosts)))
+                Text(LocalizationKeys.operationalCosts.localized(with: String(format: "$%.2f", report.estimatedDamageCosts)))
             }
         }
         .scrollDisabled(true)

@@ -26,14 +26,16 @@ struct PredictionListView: View {
                             Text(prediction.timestamp)
                                 .font(.headline)
                             
-                            Text("Location: \("\(prediction.latitude), \(prediction.longitude)")")
+                            Text("\(LocalizationKeys.location.localized): \("\(prediction.latitude), \(prediction.longitude)")")
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                                 .lineLimit(2)
                             
                             // Display the fire probability as a percentage.
-                            Text("Probability: \(String(format: "%.0f%%", prediction.fireProb * 100))")
+                            let probablilityValue = String(format: "%.0f%%", prediction.fireProb * 100)
+                            Text("\(LocalizationKeys.probability.localized): \(probablilityValue)")
                                 .font(.headline)
+                            
                         }
                         .frame(maxWidth: .infinity)
                     }

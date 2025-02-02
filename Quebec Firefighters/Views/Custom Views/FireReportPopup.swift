@@ -31,13 +31,13 @@ struct FireReportPopup: View {
                 }
 
             VStack(spacing: 20) {
-                Text("\(severity.capitalized) Fire Report")
+                Text(LocalizationKeys.fireReport.localized(with: severity.capitalized))
                     .font(.title2)
                     .bold()
 
                 HStack {
                     VStack {
-                        Text("✅ Addressed")
+                        Text(LocalizationKeys.addressedFire.localized)
                             .font(.headline)
                         Text("\(addressed)")
                             .font(.largeTitle)
@@ -49,7 +49,7 @@ struct FireReportPopup: View {
                     .cornerRadius(12)
 
                     VStack {
-                        Text("🚨 Missed")
+                        Text(LocalizationKeys.missedFire.localized)
                             .font(.headline)
                         Text("\(delayed)")
                             .font(.largeTitle)
@@ -61,14 +61,14 @@ struct FireReportPopup: View {
                     .cornerRadius(12)
                 }
 
-                Text("🔥 Total Fires: \(total)")
+                Text(LocalizationKeys.totalFires.localized(with: total))
                     .font(.headline)
                     .foregroundColor(.orange)
 
                 Button(action: {
                     showPopup = false
                 }) {
-                    Text("Close")
+                    Text(LocalizationKeys.close.localized)
                         .bold()
                         .padding()
                         .frame(width: 100)

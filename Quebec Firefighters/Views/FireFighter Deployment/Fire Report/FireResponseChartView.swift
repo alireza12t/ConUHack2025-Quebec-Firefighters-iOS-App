@@ -64,17 +64,17 @@ struct FireResponseChartView: View {
                 // Create a stacked bar for each data item.
                 ForEach(chartData) { dataPoint in
                     BarMark(
-                        x: .value("Severity", dataPoint.severity),
-                        y: .value("Value", dataPoint.value)
+                        x: .value(LocalizationKeys.severity.localized, dataPoint.severity),
+                        y: .value(LocalizationKeys.value.localized, dataPoint.value)
                     )
                     // The use of .foregroundStyle(by:) automatically creates a legend.
-                    .foregroundStyle(by: .value("Type", dataPoint.type))
+                    .foregroundStyle(by: .value(LocalizationKeys.type.localized, dataPoint.type))
                 }
                 // Add invisible bars to annotate the top of each stacked bar with the total.
                 ForEach(totals) { totalItem in
                     BarMark(
-                        x: .value("Severity", totalItem.id),
-                        y: .value("Total", totalItem.total)
+                        x: .value(LocalizationKeys.severity.localized, totalItem.id),
+                        y: .value(LocalizationKeys.total.localized, totalItem.total)
                     )
                     .opacity(0)
                     .annotation(position: .overlay) {
@@ -85,8 +85,8 @@ struct FireResponseChartView: View {
             }
             // Define the color mapping for the two types.
             .chartForegroundStyleScale([
-                "Addressed": Color.green,
-                "Missed": Color.red
+                LocalizationKeys.addressed.localized: Color.green,
+                LocalizationKeys.missed.localized: Color.red
             ])
             // Place the automatically generated legend at the bottom.
             .chartLegend(position: .bottom)

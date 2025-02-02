@@ -82,36 +82,6 @@
             endingLineNumber = "36"
             landmarkName = "processCSV(from:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CFF98717-225C-43B0-976E-5EFD9C87AED9 - 73a0217569ecaeed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(6) suspend resume partial function for Quebec_Firefighters.CSVReaderViewModel.processCSV(from: Foundation.URL) async -&gt; ()"
-                  moduleName = "Quebec Firefighters.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alirezatoghianikhorasgani/Desktop/CONUHack2025/ConUHack2025-Quebec-Firefighters-iOS-App/Quebec%20Firefighters/Views/CSV%20Reader/CSVReaderViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36">
-               </Location>
-               <Location
-                  uuid = "CFF98717-225C-43B0-976E-5EFD9C87AED9 - 923d086b34ff4cec"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(7) suspend resume partial function for Quebec_Firefighters.CSVReaderViewModel.processCSV(from: Foundation.URL) async -&gt; ()"
-                  moduleName = "Quebec Firefighters.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alirezatoghianikhorasgani/Desktop/CONUHack2025/ConUHack2025-Quebec-Firefighters-iOS-App/Quebec%20Firefighters/Views/CSV%20Reader/CSVReaderViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -33,12 +33,12 @@ struct ContentView: View {
         TabView {
             CSVReaderView()
                 .tabItem {
-                    Label("CSV Reader", systemImage: "doc.text.magnifyingglass")
+                    Label(LocalizationKeys.unitDeployment.localized, systemImage: "shield.fill")
                 }
             
             PredictionReportView()
                 .tabItem {
-                    Label("Predictions", systemImage: "flame.fill")
+                    Label(LocalizationKeys.predictions.localized, systemImage: "flame.fill")
                 }
         }
     }
@@ -46,4 +46,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environment(\.locale, .init(identifier: "fr"))
 }

@@ -1,0 +1,67 @@
+/* 
+  Localizable.strings
+  Quebec Firefighters
+
+  Created by Alireza on 2/2/25.
+  
+*/
+
+"predictions" = "Predictions";
+"unit_deployment" = "Unit Deployment";
+"addressed" = "Addressed";
+"missed" = "Missed";
+"severity" = "Severity";
+"total" = "Total";
+"type" = "Type";
+"value" = "Value";
+
+"csv_empty" = "The CSV file is empty.";
+"csv_row_error" = "Row %d has %d columns; expected %d.";
+"permission_denied" = "Permission denied for file access.";
+
+"fire_report" = "%@ Fire Report";
+"total_fires" = "🔥 Total Fires: %d";
+"addressed_fire" = "✅ Addressed";
+"missed_fire" = "🚨 Missed";
+"close" = "Close";
+
+"fires_by_severity" = "Fires by Severity";
+"no_data_available" = "No data available";
+"fire_response_report" = "Fire Response Report";
+"general_statistics" = "General Statistics";
+
+"total_fires_addressed" = "Total Fires Addressed: %d";
+"total_fires_delayed" = "Total Fires Delayed: %d";
+"total_fires_no_emojie" = "Total Fires: %d";
+"operational_costs" = "Operational Costs: $%.2f";
+"damage_costs" = "Damage Costs: $%.2f";
+
+"upload_csv_file" = "Upload CSV File";
+"upload_csv_description" = "Upload your csv file to plan deployment of units to prevent wildfires!";
+"input_method" = "Input Method";
+"deploying_units" = "Deploying units ...";
+"unit_deployment" = "Unit Deployment";
+"enter_file_url" = "Enter file URL";
+"upload_from_files" = "Upload from Files";
+"failed_to_load_file" = "Failed to load file.";
+
+"permission_required" = "Permission Required";
+"permission_denied_message" = "This app does not have permission to access the file. Please enable file access in Settings.";
+"open_settings" = "Open Settings";
+
+"file" = "File";
+"link" = "Link";
+"load" = "Load";
+
+"fetching_address" = "Fetching address...";
+"address_not_available" = "Address not available";
+"location" = "Location";
+"probability" = "Probability";
+
+"fetching_fire_predictions" = "Fetching Fire Predictions...";
+"select_view" = "Select View";
+"list" = "List";
+"map" = "Map";
+"fire_predictions" = "Fire Predictions";
+
+"time" = "Time";

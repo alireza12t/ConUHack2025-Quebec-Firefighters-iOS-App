@@ -11,7 +11,7 @@ import Combine
 
 /// ViewModel to manage the logic for `MapDetailView`
 class MapDetailViewModel: ObservableObject {
-    @Published var address: String = "Fetching address..."
+    @Published var address: String = LocalizationKeys.fetchingAddress.localized
     
     private var geocoder = CLGeocoder()
     
@@ -31,7 +31,7 @@ class MapDetailViewModel: ObservableObject {
                 }
             } catch {
                 DispatchQueue.main.async {
-                    self.address = "Address not available"
+                    self.address = LocalizationKeys.addressNotAvailable.localized
                 }
             }
         }
@@ -52,7 +52,7 @@ class MapDetailViewModel: ObservableObject {
                    let country = placemark.country {
                     continuation.resume(returning: "\(street), \(city), \(country)")
                 } else {
-                    continuation.resume(returning: "Address not available")
+                    continuation.resume(returning: LocalizationKeys.addressNotAvailable.localized)
                 }
             }
         }

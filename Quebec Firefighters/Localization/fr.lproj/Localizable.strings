@@ -1,0 +1,67 @@
+/* 
+  Localizable.strings
+  Quebec Firefighters
+
+  Created by Alireza on 2/2/25.
+  
+*/
+
+"predictions" = "Prédictions";
+"unit_deployment" = "Déploiement d'unité";
+"addressed" = "Traité";
+"missed" = "Manqué";
+"severity" = "Gravité";
+"total" = "Total";
+"type" = "Type";
+"value" = "Valeur";
+
+"csv_empty" = "Le fichier CSV est vide.";
+"csv_row_error" = "La ligne %d a %d colonnes; %d attendu.";
+"permission_denied" = "Accès refusé au fichier.";
+
+"fire_report" = "Rapport d'incendie %@";
+"total_fires" = "🔥 Incendies totaux : %d";
+"addressed_fire" = "✅ Pris en charge";
+"missed_fire" = "🚨 Manqué";
+"close" = "Fermer";
+
+"fires_by_severity" = "Incendies par gravité";
+"no_data_available" = "Aucune donnée disponible";
+"fire_response_report" = "Rapport d'intervention incendie";
+"general_statistics" = "Statistiques générales";
+
+"total_fires_addressed" = "Incendies pris en charge : %d";
+"total_fires_delayed" = "Incendies retardés : %d";
+"total_fires_no_emojie" = "Incendies totaux : %d";
+"operational_costs" = "Coûts opérationnels : $%.2f";
+"damage_costs" = "Coûts des dommages : $%.2f";
+
+"upload_csv_file" = "Télécharger le fichier CSV";
+"upload_csv_description" = "Téléchargez votre fichier CSV pour planifier le déploiement des unités afin de prévenir les feux de forêt !";
+"input_method" = "Méthode d'entrée";
+"deploying_units" = "Déploiement des unités en cours...";
+"unit_deployment" = "Déploiement d'unités";
+"enter_file_url" = "Entrez l'URL du fichier";
+"upload_from_files" = "Télécharger depuis Fichiers";
+"failed_to_load_file" = "Échec du chargement du fichier.";
+
+"permission_required" = "Autorisation requise";
+"permission_denied_message" = "Cette application n'a pas la permission d'accéder au fichier. Veuillez activer l'accès aux fichiers dans les Réglages.";
+"open_settings" = "Ouvrir les Réglages";
+
+"file" = "Fichier";
+"link" = "Lien";
+"load" = "Charger";
+
+"fetching_address" = "Récupération de l'adresse...";
+"address_not_available" = "Adresse non disponible";
+"location" = "Emplacement";
+"probability" = "Probabilité";
+
+"fetching_fire_predictions" = "Récupération des prédictions d'incendies...";
+"select_view" = "Sélectionner la vue";
+"list" = "Liste";
+"map" = "Carte";
+"fire_predictions" = "Prédictions d'incendies";
+
+"time" = "Heure";

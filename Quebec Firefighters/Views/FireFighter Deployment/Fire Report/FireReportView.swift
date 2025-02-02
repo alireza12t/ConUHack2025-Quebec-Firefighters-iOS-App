@@ -26,14 +26,14 @@ struct FireReportView: View {
                     if let report = viewModel.fireReport {
                         headerView
                         FireReportStatisticsView(report: report)
-                        Text("Fires by Severity")
+                        Text(LocalizationKeys.firesBySeverity.localized)
                             .font(.headline)
                             .padding(.horizontal)
                         FireResponseChartView(report: report,
                                               showPopup: $showPopup,
                                               selectedData: $selectedData)
                     } else {
-                        Text("No data available")
+                        Text(LocalizationKeys.noDataAvailable.localized)
                             .padding()
                     }
                 }
@@ -54,7 +54,7 @@ struct FireReportView: View {
     
     /// The header view for the report.
     private var headerView: some View {
-        Text("Fire Response Report")
+        Text(LocalizationKeys.fireResponseReport.localized)
             .font(.title)
             .bold()
             .padding()

@@ -76,11 +76,11 @@ struct BottomSheetView: View {
                     .font(.headline)
                     .foregroundColor(.primary)
 
-                Text("Time: \(prediction.timestamp)")
+                Text("\(LocalizationKeys.time.localized): \(prediction.timestamp)")
                     .font(.subheadline)
                     .foregroundColor(.primary)
                 
-                Text("Severity: \(prediction.fireSeverity.capitalized)")
+                Text("\(LocalizationKeys.severity.localized): \(prediction.fireSeverity.capitalized)")
                     .font(.subheadline)
                     .foregroundColor(Color.colorForSeverity(prediction.fireSeverity))
             }

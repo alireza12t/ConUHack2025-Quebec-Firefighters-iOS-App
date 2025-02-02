@@ -22,12 +22,12 @@ struct PredictionReportView: View {
         NavigationView {
             VStack {
                 if viewModel.isLoading {
-                    FireLoadingView()
+                    FireLoadingView(loadingText: .constant(LocalizationKeys.fetchingFirePredictions.localized))
                 } else {
                     // Segmented control to select between map and list views.
-                    Picker("Select View", selection: $selectedView) {
-                        Text("List").tag(0)
-                        Text("Map").tag(1)
+                    Picker(LocalizationKeys.selectView.localized, selection: $selectedView) {
+                        Text(LocalizationKeys.list.localized).tag(0)
+                        Text(LocalizationKeys.map.localized).tag(1)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
@@ -47,7 +47,7 @@ struct PredictionReportView: View {
                 viewModel.onAppear()
             }
         }
-        .navigationTitle("Fire Predictions")
+        .navigationTitle(LocalizationKeys.firePredictions.localized)
     }
 }
 

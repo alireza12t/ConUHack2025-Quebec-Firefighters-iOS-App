@@ -28,7 +28,7 @@ struct FirePrediction: Identifiable, Codable {
     }
 }
 
-struct FirePredictionModel {
+struct FirePredictionResponse: Codable {
     let modelInfo: ModelInfo
     let predictions: [FirePrediction]
     
@@ -38,7 +38,7 @@ struct FirePredictionModel {
     }
 }
 
-struct ModelInfo: Decodable {
+struct ModelInfo: Codable {
     let averageAccuracy: Double
     let averageF1Score: Double
     let numberOfIterations: Int

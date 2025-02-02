@@ -16,9 +16,9 @@ enum CSVError: Error, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .emptyFile:
-            return "The CSV file is empty."
+            return LocalizationKeys.csvEmpty.localized
         case .invalidRow(let row, let expected, let found):
-            return "Row \(row) has \(found) columns; expected \(expected)."
+            return LocalizationKeys.csvRowError.localized(with: row, found, expected)
         }
     }
 }
@@ -31,7 +31,7 @@ enum CSVProcessorError: Error, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .fileAccessDenied:
-            return "Permission denied for file access."
+            return LocalizationKeys.permissionDenied.localized
         }
     }
 }

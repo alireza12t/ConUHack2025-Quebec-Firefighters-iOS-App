@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FireLoadingView: View {
     @State private var gradientOffset: CGFloat = -1.0
+    @Binding var loadingText: String  // Dynamically update loading message
 
     let animationDuration: Double = 1.2
 
@@ -45,8 +46,8 @@ struct FireLoadingView: View {
                     )
                     .animation(Animation.linear(duration: animationDuration).repeatForever(autoreverses: true), value: gradientOffset)
 
-                // Loading text
-                Text("Processing Fire Report...")
+                // Dynamic Loading text
+                Text(loadingText)
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -64,5 +65,5 @@ struct FireLoadingView: View {
 }
 
 #Preview {
-    FireLoadingView()
+    FireLoadingView(loadingText: .constant("Fetching Fire Predictions..."))
 }
