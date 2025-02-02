@@ -13,6 +13,13 @@ struct PredictionListView: View {
     var predictions: [FirePrediction]
     var backgroundColor: Color
     
+    @State private var selectedSeverity: String = "All"
+    @State private var sortOrder: SortOrder = .highToLow
+    
+    enum SortOrder {
+        case lowToHigh, highToLow
+    }
+    
     init(predictions: [FirePrediction]) {
         self.predictions = predictions
         #if os(iOS)
@@ -22,43 +29,69 @@ struct PredictionListView: View {
         #endif
     }
     
+    var filteredPredictions: [FirePrediction] {
+        let filtered = selectedSeverity == "All" ? predictions : predictions.filter { $0.fireSeverity == selectedSeverity }
+        
+        return sortOrder == .highToLow ? filtered.sorted { $0.fireProb > $1.fireProb } : filtered.sorted { $0.fireProb < $1.fireProb }
+    }
+    
     var body: some View {
-        List {
-            ForEach(predictions) { prediction in
-                NavigationLink(destination: PredictionMapDetailView(prediction: prediction)) {
-                    HStack(spacing: 12) {
-                        // Severity indicator.
-                        Circle()
-                            .fill(Color.colorForSeverity(prediction.fireSeverity))
-                            .frame(width: 16, height: 16)
-                        
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(prediction.timestamp)
-                                .font(.headline)
+        VStack {
+            HStack {
+                // Severity filter
+                Picker("Severity", selection: $selectedSeverity) {
+                    Text("All").tag("All")
+                    Text("Low").tag("low")
+                    Text("Medium").tag("medium")
+                    Text("High").tag("high")
+                }
+                .pickerStyle(MenuPickerStyle())
+                
+                // Sort order
+                Picker("Sort by Probability", selection: $sortOrder) {
+                    Text("High to Low").tag(SortOrder.highToLow)
+                    Text("Low to High").tag(SortOrder.lowToHigh)
+                }
+                .pickerStyle(MenuPickerStyle())
+            }
+            .padding()
+            
+            List {
+                ForEach(filteredPredictions) { prediction in
+                    NavigationLink(destination: PredictionMapDetailView(prediction: prediction)) {
+                        HStack(spacing: 12) {
+                            // Severity indicator
+                            Circle()
+                                .fill(Color.colorForSeverity(prediction.fireSeverity))
+                                .frame(width: 16, height: 16)
                             
-                            Text("\(LocalizationKeys.location.localized): \("\(prediction.latitude), \(prediction.longitude)")")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                                .lineLimit(2)
-                            
-                            // Display the fire probability as a percentage.
-                            let probablilityValue = String(format: "%.0f%%", prediction.fireProb * 100)
-                            Text("\(LocalizationKeys.probability.localized): \(probablilityValue)")
-                                .font(.headline)
-                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(prediction.timestamp)
+                                    .font(.headline)
+                                
+                                Text("\(LocalizationKeys.location.localized): \\(prediction.latitude), \\(prediction.longitude)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                    .lineLimit(2)
+                                
+                                // Display the fire probability as a percentage
+                                let probabilityValue = String(format: "%.0f%%", prediction.fireProb * 100)
+                                Text("\(LocalizationKeys.probability.localized): \(probabilityValue)")
+                                    .font(.headline)
+                            }
+                            .frame(maxWidth: .infinity)
                         }
-                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(backgroundColor)
+                        )
+                        .padding(.vertical, 4)
                     }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(backgroundColor)
-                    )
-                    .padding(.vertical, 4)
                 }
             }
+            .listStyle(PlainListStyle())
         }
-        .listStyle(PlainListStyle())
     }
 }
 
