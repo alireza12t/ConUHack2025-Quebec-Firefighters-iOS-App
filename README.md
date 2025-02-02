@@ -2,6 +2,9 @@
 
 The Quebec Firefighters app is a SwiftUI project that helps optimize firefighting resource deployment for Quebec’s wildfire season while providing predictive insights into future wildfire occurrences. This application uses a modern SwiftUI interface to display resource deployment reports, wildfire predictions, and map visualizations with GPS coordinate listings of predicted hotspots.
 
+## Link to demo:
+https://youtube.com/shorts/xBIDFeHbnQo?feature=share
+
 ## Features
 
 - **Resource Deployment Optimization:**  
